@@ -6,9 +6,13 @@ public class Player : MonoBehaviour
 {
     // Public Variables
     public int maxHp; // Maximum Health, required for healing
+    public int atk; // Atk Stat that the player currently have
+    public int def; // Def Stat that the player currently have
     public float atkGrowth; // decimal number that multiplies the Atk stat per Level count
     public float defGrowth; // decimal number that multiplies the Def Stat per Level count
-
+    public float hpGrowth; // decimal number that multiples the Hp stat per level count
+    
+    
     // Private Variables
     private int curHp; // Health that interacts with Damage and Heal
     private int Level; // the integer that Stats are multiplied from
@@ -29,8 +33,11 @@ public class Player : MonoBehaviour
     }
 
     // Level up
-    public void LevelUp() {
-
+    public void LevelUp() { // Calculates the stat increase
+        atkVal = (int)(atk * ((atk * atkGrowth) + 1));
+		maxHp = (int)(maxHp * ((maxHp * hpGrowth) + 1));
+		defVal = (int)(def * ((def * defGrowth) + 1));
+		curHp = maxHp;
     }
    
 
