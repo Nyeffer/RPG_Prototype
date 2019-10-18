@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Public Variables
+    public int maxHp; // Maximum Health, required for healing
+
     // Private Variables
-    private int maxHp = 0; // Maximum Health, required for healing
     private int curHp; // Health that interacts with Damage and Heal
 
-    // Public Variables
-    public int hp;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,18 +22,13 @@ public class Player : MonoBehaviour
     {
         
     }
-
-    // Setters
-    public void SetHp(int health) {
-        hp = health;
-    }
+   
 
     // Getters
-    public int GetCurHp() {
+    public int GetHp() { // Function to GET assess to the CurrentHp integer
         return curHp;
     }
+    
 
-    public int GetMaxHp() {
-        return maxHp;
-    }
+    
 }
